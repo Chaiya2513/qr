@@ -15,7 +15,7 @@ if st.button("สร้าง QR Code") and url_data:
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
         box_size=10,
-        border=4,
+        border=1,
     )
     qr.add_data(url_data)
     qr.make(fit=True)
@@ -25,7 +25,7 @@ if st.button("สร้าง QR Code") and url_data:
     if logo_file:
         logo = Image.open(logo_file)
         # ปรับขนาดโลโก้ (ประมาณ 25% ของพื้นที่)
-        base_width = qr_img.size[0] // 4
+        base_width = qr_img.size[0] // 5
         h_size = int(logo.size[1] * (base_width / float(logo.size[0])))
         logo = logo.resize((base_width, h_size), Image.Resampling.LANCZOS)
         
