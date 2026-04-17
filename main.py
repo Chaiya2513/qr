@@ -33,7 +33,7 @@ if st.button("สร้าง QR Code") and url_data:
         qr_img.paste(logo, pos)
 
     # แสดงผลและปุ่มดาวน์โหลด
-    st.image(qr_img, caption="QR Code", use_container_width=True)
+    st.image(qr_img, use_container_width=True)
     buf = BytesIO()
     qr_img.save(buf, format="PNG")
     st.download_button("ดาวน์โหลด", buf.getvalue(), "qrcode.png", "image/png")
